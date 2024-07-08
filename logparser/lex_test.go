@@ -1,4 +1,4 @@
-package megric
+package logparser
 
 import (
 	"testing"
@@ -6,6 +6,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestLex parses a log into fields.
+//
+// asdfasfafdaf
 func TestLex(t *testing.T) {
 	as := assert.New(t)
 

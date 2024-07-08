@@ -1,4 +1,4 @@
-package megric
+package logparser
 
 import (
 	"fmt"

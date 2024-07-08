@@ -1,14 +1,17 @@
-package megric
+package logparser
 
 import (
 	"bytes"
 )
 
-// Lex scan and split the line into fields.
-// 1. spaces is the basic delimiter.
-// 2. text between bracket [] considered as one field.
-// 3. text between double quotes "" considered as one field. No escape char taken into account.
-// 4. after maxFields parsed, the rest will be considered as one fields.
+// Lex scan and split the line into fields according to Common Log Format and Extended Log Format.
+//
+//	[Common Log Format]:https://wikipedea.org
+//	1. Spaces are the basic delimiter.
+//	2. Text between bracket [] considered as one field.
+//	3. Text between double quotes "" considered as one field.
+//	4. After maxFields parsed, the rest will be considered as one fields. the total return fields may be maxFields + 1
+//	5. Escape char such as "\"", or embedded delimiter such as [[abc]]
 func Lex(line string, maxFields int) []string {
 	var fields []string
 	fieldBuf := bytes.Buffer{}
