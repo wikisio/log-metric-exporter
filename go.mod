@@ -1,4 +1,4 @@
-module github.com/wikisio
+module github.com/wikisio/log-metric-exporter
 
 go 1.19
 
